@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 25px;
+            background-color: white;
+            color: black;
+            font-size: 25px;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>hello</h1>
+    <input type="text" id="userColor">
+    <button id="applyBtn"> שנה צבע</button>
+    <div id="displayBox" style="width: 200px; height: 200px; background-color: aquamarine;"></div>
+
+    <button onclick="myFunction()">Toggle dark mode</button>
+
+    <script>
+        const inp = document.getElementById("userColor");
+        const butt = document.getElementById("applyBtn");
+        const div1 = document.getElementById("displayBox");
+
+        function myFunction() {
+        const element = document.body;
+        element.classList.toggle("dark-mode");
+        }
+
+        inp.addEventListener("input", ()=> {
+            div1.style.backgroundColor = inp.value
+        })
+
+        butt.addEventListener("click", () => {
+            if(!inp.value) {
+                alert("You need to enter a value")
+            }
+            else{
+                inp.value = " "
+            }
+        })
+
+
+    </script>
+</body>
+</html>
+
+
